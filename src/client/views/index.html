@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>SENTIMENT ANALYSIS</title>
+        <link href="https://fonts.googleapis.com/css2?&family=Roboto:wght@300;500;700&family=Roboto+Slab:wght@300;400;700;800&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/1aac26dbd0.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <header>
+            <div class="header-style">
+                <h1>✨✨✨ SENTIMENT ANALYSIS ✨✨✨</h1>
+              </div>
+        </header>
+        <main>
+            <p>Enter a url of a blog to analyze it's sentiment</p>
+            <section>
+                <form class="" onsubmit="return Client.handleSubmit(event)">
+                    <input id="url" type="text" name="input" value="" placeholder="Enter URL here">
+                    <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return handleSubmit(event)">
+                </form>
+            </section>
+
+            <section>
+                <strong>Results</strong>
+                <table>
+                    <tr>
+                        <td>Polarity </td>
+                        <td id="polarity" ></td>
+                    </tr>
+                    <tr>
+                        <td>Agreement</td>
+                        <td id="agreement"></td>
+                    </tr>
+                    <tr>
+                        <td>Subjectivity</td>
+                        <td id="subjectivity"></td>
+                    </tr>
+                    <tr>
+                        <td>Confidence</td>
+                        <td id="confidence"></td>
+                    </tr>
+                    <tr>
+                        <td>Irony</td>
+                        <td id="irony"></td>
+                    </tr>
+                </table>
+            </section>
+        </main>
+
+        <footer>
+            Made by Hsu for @Udacity
+        </footer>
+
+        <script>
+            // Check that service workers are supported
+            if ('serviceWorker' in navigator) {
+                // Use the window load event to keep the page load performant
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/service-worker.js');
+                });
+            }
+        </script>
+    </body>
+</html>
